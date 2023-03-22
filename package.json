@@ -1,0 +1,40 @@
+{
+  "name": "copycat",
+  "version": "1.0.0",
+  "bin": "lib/cli.js",
+  "description": "A simple, declarative CLI to mock HTTP servers for development and testing purposes",
+  "main": "lib/index.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "type": "module",
+  "types": "lib/index.d.js",
+  "scripts": {
+    "dev": "ts-node src/cli.ts -f example-routes.json",
+    "start": "node lib/cli.js -f ./example-routes.json",
+    "build": "npm run clean && tsc && chmod +x ./lib/cli.js",
+    "clean": "rm -rf ./lib || 1",
+    "prepare": "npm run build",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "author": "Amit Wolfus",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "fastify": "^4.14.1",
+    "handlebars": "^4.7.7",
+    "minimist": "^1.2.8",
+    "nanoid": "^4.0.1"
+  },
+  "devDependencies": {
+    "@tsconfig/esm": "^1.0.2",
+    "@tsconfig/node16": "^1.0.3",
+    "@tsconfig/node18": "^1.0.1",
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.15.3",
+    "prettier": "^2.8.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}

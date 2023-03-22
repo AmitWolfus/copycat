@@ -1,0 +1,42 @@
+{
+  "/orders": {
+    "GET": {
+      "orders": [
+        {
+          "id": "{{ faker 'datatype.uuid' }}",
+          "status": "shipped"
+        },
+        {
+          "id": "{{ faker 'datatype.uuid' }}",
+          "status": "pending"
+        }
+      ]
+    },
+    "POST": {
+      "status": 201,
+      "body": {
+        "location": "{{ hostname }}/{{ body.id }}"
+      },
+      "headers": {
+        "x-something": "whatever"
+      }
+    },
+    "/:id": {
+      "GET": [
+        {
+          "condition": "params.id === '444'",
+          "status": 404,
+          "body": {
+            "message": "order not found"
+          }
+        },
+        {
+          "id": "{{ params.id }}",
+          "status": "shipped",
+          "address": "{{ faker 'address.streetAddress'}}, {{ faker 'address.city' }}",
+          "name": "John Doe"
+        }
+      ]
+    }
+  }
+}
