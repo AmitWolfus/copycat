@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "ESNext",
-    "declaration": false,
+    "declaration": true,
     "resolveJsonModule": true,
     "target": "es2017",
     "sourceMap": true,
