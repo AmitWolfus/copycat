@@ -1,6 +1,6 @@
 {
   "name": "@amitwolfus/copycat",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "bin": "lib/cli.js",
   "description": "A simple, declarative CLI to mock HTTP servers for development and testing purposes",
   "main": "lib/index.ts",
