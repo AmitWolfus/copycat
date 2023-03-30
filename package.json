@@ -9,6 +9,10 @@
   ],
   "type": "module",
   "types": "lib/index.d.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AmitWolfus/copycat"
+  },
   "scripts": {
     "dev": "ts-node src/cli.ts -f example-routes.json",
     "start": "node lib/cli.js -f ./example-routes.json",
