@@ -45,7 +45,10 @@ export function mockServer(
 
   return {
     async listen() {
-      const url = (await fastify.listen({ port: options.port })) as Url;
+      const url = (await fastify.listen({
+        port: options.port,
+        host: '0.0.0.0',
+      })) as Url;
 
       return url;
     },
